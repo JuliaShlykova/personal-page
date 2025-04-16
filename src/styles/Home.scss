@@ -1,0 +1,125 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.text-block {
+  max-width: 65ch;
+  text-align: center;
+  // text-wrap: pretty;
+  // padding: 50px 20px;
+}
+
+.home-header {
+  margin-bottom: 50px;
+}
+
+.large-text {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.middle-text {
+  font-size: 3rem;
+  overflow: hidden;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 50px;
+  animation: levitation 2s infinite ease-in-out alternate;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    aspect-ratio: 1;
+    border-bottom: 3px solid var(--contrast-color);
+    border-right: 3px solid var(--contrast-color);
+    border-bottom-right-radius: 20px;
+    transform: rotateZ(45deg) scale(0.4);
+  }
+}
+
+@keyframes levitation {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: none;
+  } 
+  100% {
+    transform: translateY(10px);
+  }
+}
+
+// Decor
+
+.home-decor {
+  position: absolute;
+  pointer-events: none;
+  top: -20%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-decor svg {
+	width: 100%;
+	height: 100%;
+}
+
+.home-decor .stroke {
+	stroke: var(--bright-color);
+	fill: none;
+	animation-name: moving;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	transform: rotatez(15deg);
+}
+
+@for $num from 1 through 10 {
+	.home-decor .stroke:nth-child(#{$num}) {
+		animation-delay: ($num - 1) * 0.1s;
+		opacity: (10 - $num + 1) * 0.1;
+	}
+}
+
+@keyframes moving {
+	0% {
+		transform: rotatez(15deg);
+	}
+
+	100% {
+		transform: rotatez(15deg) translatex(-100%);
+	}
+}
+
+@media (prefers-reduced-motion) {
+  .home-decor .stroke, .scroll-down {
+    animation: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .large-text {
+    font-size: 3rem;
+  }
+  
+  .middle-text {
+    font-size: 2rem;
+  }
+
+  @for $num from 1 through 10 {
+    .home-decor .stroke:nth-child(#{$num}) {
+      animation-delay: ($num - 1) * 0.2s;
+    }
+  }
+}

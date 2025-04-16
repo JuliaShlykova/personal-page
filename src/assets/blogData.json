@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Subgrid",
+    "url": "https://dev.to/jsha/subgrid-1ee1",
+    "description": "This segment of the Grid series is dedicated to explaining how and why we should make use of the relatively new feature of CSS Grid Layout."
+  },
+  {
+    "title": "CSS perspective and opening book as in 3d",
+    "url": "https://dev.to/jsha/css-perspective-and-opening-book-as-in-3d-3985",
+    "description": "By following this tutorial, you can gain an understanding of perspective in CSS and how to draw figures in a three-dimensional space."
+  },
+  {
+    "title": "Trans component in react-i18next. Multilingual website",
+    "url": "https://dev.to/jsha/trans-component-in-react-i18next-multilingual-website-3lg3",
+    "description": "It provides understanding on how to correctly translate the entire JSX tree instead of single elements in the internationalization framework for React — react-i18next."
+  }
+]

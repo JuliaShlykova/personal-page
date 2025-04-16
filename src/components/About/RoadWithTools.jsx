@@ -1,0 +1,25 @@
+import React from 'react'
+import Road from './Road'
+import useCurrentSection from '../../hooks/useCurrentSection';
+
+const RoadWithTools = () => {
+  const sectionInView = useCurrentSection();
+
+  return (
+    <div id="road-container-wrapper">
+    <div id="road-container"  style={sectionInView==='about'?{}:{display:'none'}}>
+
+        <Road />
+        <div className="tool-sign"><img src="/icons-tools/html.svg" alt="html" title="html" /></div>
+        <div className="tool-sign"><img src="/icons-tools/css.svg" alt="css" /></div>
+        <div className="tool-sign"><img src="/icons-tools/javascript.svg" alt="javascript" /></div>
+        <div className="tool-sign"> <img src="/icons-tools/react.svg" alt="react" /> </div>
+        <div className="tool-sign"> <img src="/icons-tools/nodejs.svg" alt="nodejs" /> </div>
+        <div className="tool-sign"><img src="/icons-tools/expressjs.svg" alt="express" /></div>
+        <div className="tool-sign"> <img src="/icons-tools/mongodb.svg" alt="mongodb" /> </div>
+    </div>
+    </div>
+  )
+}
+
+export default RoadWithTools

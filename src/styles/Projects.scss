@@ -1,0 +1,266 @@
+#projects {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  >* {
+    // outline: 2px solid red;
+  }
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+
+  align-self: flex-start;
+
+  cursor: pointer;
+  &.shifting {
+		transition: transform 0.2s ease-out;
+	}
+}
+
+.slide {
+	--slide-width: 60svw;
+  width: var(--slide-width);
+  flex-shrink: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+  transform: scale(0.8);
+	transform-origin: top center;
+  transition: transform 0.2s ease-out;
+
+  &>*:not(.video-wrapper) {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+
+  * {
+    // outline: 2px solid red;
+  }
+
+  &.active {
+    transform: scale(1);
+
+    &>* {
+      transform: none;
+      opacity: 1;
+
+    }
+
+    @for $num from 2 through 4 {
+      &>*:nth-child(#{$num}) {
+        transition-delay: $num * 0.1s;
+        transition-duration: 0.2s;
+        transition-property: transform, opacity;
+        transition-timing-function: ease-out;
+      }
+    }
+  }
+}
+
+
+
+.slide-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+
+  h3:hover {
+    cursor: text;
+  }
+}
+
+
+.tools {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+
+  li {
+    height: 2rem;
+    border-radius: 10px;
+    // background: linear-gradient(to top, rgb(226, 224, 219), transparent);
+    box-shadow: inset 0 -2px 5px var(--secondary-color);
+    // border: 1px solid rgb(226, 224, 219);
+
+  }
+
+  li[title="React"] {
+    // background-color: #090f14;
+
+  }
+
+  li[title="MongoDB"] {
+    padding: 5px;
+  }
+}
+
+.links {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 5px 1rem;
+  right: 0;
+
+  a {
+    height: 1.7rem;
+    aspect-ratio: 1;
+    text-decoration: none;
+    color: inherit;
+
+    &:first-child {
+      color: var(--bright-color);
+    }
+  }
+}
+
+.slide-description {
+  text-align: center;
+
+  &:hover {
+    cursor: text;
+  }
+}
+
+video {
+	border-radius: 10px;
+}
+
+.drag-element {
+  max-width: max(5vw, 40px);
+
+  line-height: 1;
+  position: absolute;
+  background-color: var(--primary-color);
+  border: 1px solid var(--contrast-color);
+  border-radius: 5px;
+  top: 50%;
+  // vertical-align: top;
+  pointer-events: none;
+  animation-duration: 1s, 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  padding: 2px;
+
+  .drag-text {
+    display: inline-block;
+    transform: translateY(-25%);
+  }
+
+  &.left {
+    left: 0;
+    animation-name: bounce-left, disappear;
+  }
+
+  &.right {
+    right: 0;
+    animation-name: bounce-right, disappear;
+  }
+}
+
+.drag-hand {
+  font-size: 2rem;
+  // line-height: 5;
+}
+
+.github-repositories-link {
+  text-align: center;
+  margin: 100px 0 50px 0;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 1px;
+    width: 60%;
+    background-color: var(--contrast-color);
+    border-radius: 50%;
+  }
+}
+
+@keyframes bounce-left {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes bounce-right {
+  from {
+    transform: none;
+  }
+  to {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes disappear {
+ 0% {
+  opacity: 1;
+ } 
+ 18% {
+  opacity: 1;
+ }
+ 20% {
+  opacity: 0;
+ }
+ 100% {
+  opacity: 0;
+ }
+}
+
+@media (max-width: 700px) {
+  .slide {
+    --slide-width: 100svw;
+  }
+
+	.video-wrapper {
+    padding: 0 20px;
+	}
+
+  .drag-element {
+    top: 60vw;
+
+    .drag-text {
+      transform: none;
+    }
+  }
+
+  .slide-description, .tools {
+    padding: 0 20px;
+  }
+
+  .tools li {
+    height: 1.8rem;
+  }
+
+  .links {
+    gap: 5px;
+    right: 20px;
+
+    a {
+      height: 1.3rem;
+    }
+  }
+
+  h2 {
+    align-self: flex-start;
+  }
+
+}

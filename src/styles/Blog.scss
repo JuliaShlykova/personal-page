@@ -1,0 +1,150 @@
+#blog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.posts {
+  width: min(90vw, 1000px);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-auto-rows: minmax(80px, auto) minmax(120px, auto) auto;
+  gap: 20px;
+  justify-content: space-evenly;
+  // background-color: red;
+}
+
+.card {
+  background-color: var(--contrast-color);
+  color: var(--primary-color);
+  border-left: 10px double var(--primary-color);
+  position: relative;
+	isolation: isolate;
+  overflow: hidden;
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  gap: 0;
+
+  & > * {
+		transition: all 0.5s;
+
+    & > *{
+      margin: 0;
+    }
+	}
+
+  .card-title {
+		transform: translateY(160px);
+    align-content: center;
+
+    h3 {
+      text-align: left;
+    }
+	}
+	.card-content {
+		transform: translateX(150%);
+	}
+
+  .card-link {
+    height: 1.7rem;
+    aspect-ratio: 1;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin-left: auto;
+		transform: translateY(150%);
+
+  }
+
+  .blog-decor {
+    --w: 400px;
+		width: var(--w);
+    aspect-ratio: 1 / 1;
+		position: absolute;
+		top: calc(var(--w) / -2);
+		right: calc(var(--w) / -2);
+		z-index: -1;
+
+    svg {
+			fill: var(--primary-color);
+		}
+  }
+
+  &:hover {
+		.blog-decor {
+			opacity: 0.2;
+			transform: rotateZ(180deg);
+		}
+		.card-title,
+		.card-content,
+    .card-link {
+			transform: none;
+		}
+	}
+}
+
+.card:last-child {
+  background-color: var(--primary-color);
+  color: var(--contrast-color);
+
+  a {
+    text-align: center;
+    align-content: center;
+    color: var(--contrast-color);
+    position: relative;
+
+
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 50%;
+      transition: all 0.3s;
+      transform: scaleX(0.2);
+    } 
+
+    &::after {
+      top: 0;
+      left: 0;
+      background: linear-gradient(to right, var(--bright-color), var(--contrast-color));
+      transform-origin: left;
+    }
+
+    &::before {
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(to left, var(--bright-color), var(--contrast-color));
+      transform-origin: right;
+
+    }
+
+    &:hover::after, &:hover::before {
+      transform: none;
+    }
+  }
+
+
+}
+
+@keyframes around {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+@media screen and  (width <= 700px) {
+  .posts {
+    grid-template-columns: minmax(auto, 400px);
+  }
+  
+}

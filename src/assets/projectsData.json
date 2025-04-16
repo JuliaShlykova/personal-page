@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Project Tracker",
+    "description": "Web application for tracking project progress with features as adding bugs, assigning participants and setting deadlines.",
+    "video-url": "/videos/project-tracker.mp4",
+    "github-url": "https://github.com/JuliaShlykova/project-tracker-frontend",
+    "demo-url": "https://project-tracker-psi.vercel.app/",
+    "tools": ["MongoDB", "NodeJS", "React", "Bootstrap"]
+  },
+  {
+    "name": "MessageMe",
+    "description": "A chat application with the feature of real-time message exchange, online users and creation of group chats.",
+    "video-url": "/videos/messageMe.mp4",
+    "github-url": "https://github.com/JuliaShlykova/messaging-app-frontend",
+    "demo-url": "https://messaging-app-frontend-two.vercel.app/",
+    "tools": ["MongoDB", "NodeJS", "React"]
+  },
+  {
+    "name": "InTune",
+    "description": "An application for posts sharing, adding friends and creating profiles.",
+    "video-url": "/videos/in-tune.mp4",
+    "github-url": "https://github.com/JuliaShlykova/in-tune-frontend",
+    "demo-url": "https://in-tune-frontend.vercel.app/",
+    "tools": ["MongoDB", "NodeJS", "React"]
+  }
+]

@@ -52,7 +52,7 @@
   }
   50% {
     transform: none;
-  } 
+  }
   100% {
     transform: translateY(10px);
   }
@@ -71,39 +71,60 @@
 }
 
 .home-decor svg {
-	width: 100%;
-	height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .home-decor .stroke {
-	stroke: var(--bright-color);
-	fill: none;
-	animation-name: moving;
-	animation-duration: 10s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	transform: rotatez(15deg);
+  stroke: var(--bright-color);
+  fill: none;
+  animation-name: moving;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: rotatez(10deg);
 }
 
 @for $num from 1 through 10 {
-	.home-decor .stroke:nth-child(#{$num}) {
-		animation-delay: ($num - 1) * 0.1s;
-		opacity: (10 - $num + 1) * 0.1;
-	}
+  .home-decor .stroke:nth-child(#{$num}) {
+    animation-delay: ($num - 1) * 0.2s;
+    opacity: (10 - $num + 1) * 0.1;
+  }
 }
 
 @keyframes moving {
-	0% {
-		transform: rotatez(15deg);
-	}
+  0% {
+    transform: rotatez(10deg);
+  }
 
-	100% {
-		transform: rotatez(15deg) translatex(-100%);
-	}
+  17% {
+    transform: rotatez(15deg) translatey(-30%) translatex(-17%);
+  }
+
+  34% {
+    transform: rotatez(10deg) translatex(-34%);
+  }
+
+  50% {
+    transform: rotatez(15deg) translatey(-30%) translatex(-50%);
+  }
+
+  67% {
+    transform: rotatez(10deg) translatex(-67%);
+  }
+
+  84% {
+    transform: rotatez(15deg) translatey(-30%) translatex(-84%);
+  }
+
+  100% {
+    transform: rotatez(10deg) translatex(-100%);
+  }
 }
 
 @media (prefers-reduced-motion) {
-  .home-decor .stroke, .scroll-down {
+  .home-decor .stroke,
+  .scroll-down {
     animation: none;
   }
 }
@@ -112,7 +133,7 @@
   .large-text {
     font-size: 3rem;
   }
-  
+
   .middle-text {
     font-size: 2rem;
   }

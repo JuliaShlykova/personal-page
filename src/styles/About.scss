@@ -7,11 +7,10 @@
   align-items: flex-start;
   gap: 20px;
 
-
   h2 {
     width: 100%;
   }
-  >*{
+  > * {
     // outline: 1px solid blue;
   }
 
@@ -21,17 +20,21 @@
     padding: 10px 20px;
   }
 
+  li::before {
+    content: '★ ';
+  }
 }
 
 #road-container-wrapper {
   width: 700px;
+  height: 450px;
   padding: 50px 10px 0 10px;
 }
 
 #road-container {
-  position: relative;  
+  position: relative;
 
-  >*{
+  > * {
     // outline: 1px solid red;
   }
 
@@ -75,7 +78,6 @@
       left: 20%;
       border: none;
       background-color: transparent;
-
     }
 
     &:nth-child(4) {
@@ -83,7 +85,6 @@
       left: 75%;
       border: none;
       background-color: transparent;
-
     }
 
     &:nth-child(5) {
@@ -111,9 +112,8 @@
       &:nth-child(#{$num + 2}) {
         animation-delay: $num * 1.6s;
         height: 35px + $num * 3px;
-
       }
-      &:nth-child(#{$num + 2})::after{
+      &:nth-child(#{$num + 2})::after {
         height: 15px + $num * 2px;
       }
     }
@@ -140,7 +140,6 @@
 
 @media (max-width: 700px) {
   #road-container {
-
     .tool-sign {
       height: 30px;
     }

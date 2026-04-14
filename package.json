@@ -1,6 +1,7 @@
 {
   "name": "personal-site",
-  "private": true,
+  "homepage": "https://JuliaShlykova.github.io/personal-page",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -9,7 +10,9 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix  .",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "classnames": "^2.5.1",
@@ -27,6 +30,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^10.2.0",
+    "gh-pages": "^6.3.0",
     "globals": "^17.3.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",

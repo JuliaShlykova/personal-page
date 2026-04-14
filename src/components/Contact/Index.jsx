@@ -30,7 +30,7 @@ const Contact = () => {
         <li>
           <a href="https://hh.ru/resume/b3cdeaf4ff0d3d07740039ed1f78794d734f4d">
             <div className="icon-container">
-              <img src="/hh.png" alt="" />
+              <img src={`${import.meta.env.BASE_URL}/hh.png`} alt="" />
             </div>
             HeadHunter
           </a>

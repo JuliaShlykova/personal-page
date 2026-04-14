@@ -23,28 +23,50 @@ const RoadWithTools = () => {
       <div id="road-container" ref={roadContainerRef}>
         <Road />
         <div className="tool-sign">
-          <img src="/icons-tools/html.svg" alt="html" title="html" />
+          <img
+            src={`${import.meta.env.BASE_URL}/icons-tools/html.svg`}
+            alt="html"
+            title="html"
+          />
         </div>
         <div className="tool-sign">
-          <img src="/icons-tools/css.svg" alt="css" />
+          <img
+            src={`${import.meta.env.BASE_URL}/icons-tools/css.svg`}
+            alt="css"
+          />
         </div>
         <div className="tool-sign">
-          <img src="/icons-tools/javascript.svg" alt="javascript" />
+          <img
+            src={`${import.meta.env.BASE_URL}/icons-tools/javascript.svg`}
+            alt="javascript"
+          />
         </div>
         <div className="tool-sign">
           {' '}
-          <img src="/icons-tools/react.svg" alt="react" />{' '}
+          <img
+            src={`${import.meta.env.BASE_URL}/icons-tools/react.svg`}
+            alt="react"
+          />{' '}
         </div>
         <div className="tool-sign">
           {' '}
-          <img src="/icons-tools/nodejs.svg" alt="nodejs" />{' '}
+          <img
+            src={`${import.meta.env.BASE_URL}/icons-tools/nodejs.svg`}
+            alt="nodejs"
+          />{' '}
         </div>
         <div className="tool-sign">
-          <img src="/icons-tools/expressjs.svg" alt="express" />
+          <img
+            src={`${import.meta.env.BASE_URL}/icons-tools/expressjs.svg`}
+            alt="express"
+          />
         </div>
         <div className="tool-sign">
           {' '}
-          <img src="/icons-tools/mongodb.svg" alt="mongodb" />{' '}
+          <img
+            src={`${import.meta.env.BASE_URL}/icons-tools/mongodb.svg`}
+            alt="mongodb"
+          />{' '}
         </div>
       </div>
     </div>
